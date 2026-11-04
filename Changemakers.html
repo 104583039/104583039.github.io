@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bay Buddies: Animals of Port Phillip Bay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E6F6FB;--surface:#FFFFFF;--ink:#0B3D4C;--muted:#3E6572;--teal:#1C7293;--sun:#FFC53D;--coral:#E8553A;--sand:#FFF3D6;--line:#BFE3EE;--btn:#0B3D4C;--btn-ink:#FFFFFF;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A2A35;--surface:#103A48;--ink:#EAF6F8;--muted:#B5D5DD;--teal:#5FC3E4;--sand:#1B4A59;--line:#24596A;--btn:#FFC53D;--btn-ink:#0B3D4C}}
+:root[data-theme="dark"]{--bg:#0A2A35;--surface:#103A48;--ink:#EAF6F8;--muted:#B5D5DD;--teal:#5FC3E4;--sand:#1B4A59;--line:#24596A;--btn:#FFC53D;--btn-ink:#0B3D4C}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;font-size:19px;line-height:1.5}
+h1,h2,h3{font-family:'Fredoka',system-ui,sans-serif;line-height:1.1;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.hero{text-align:center;padding:48px 0 24px}
+.hero h1{font-size:clamp(44px,9vw,84px);color:var(--teal)}
+.hero p{font-size:22px;max-width:620px;margin:12px auto 0;color:var(--muted)}
+.fish{font-size:48px;letter-spacing:8px}
+section{padding:36px 0}
+h2{font-size:clamp(30px,5vw,44px);margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
+.card{background:var(--surface);border:3px solid var(--line);border-radius:28px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.pic{height:96px;display:flex;align-items:center;justify-content:center;font-size:76px;background:var(--sand);border-radius:20px}
+.pic svg{height:88px;width:auto}
+.card h3{font-size:28px}
+.tag{margin:0;color:var(--muted)}
+button.more{font:700 18px 'Fredoka',sans-serif;background:var(--btn);color:var(--btn-ink);border:0;border-radius:999px;padding:12px 20px;cursor:pointer;min-height:48px;margin-top:auto}
+button.more:focus-visible,button.opt:focus-visible{outline:4px solid var(--coral);outline-offset:3px}
+.facts{display:none;margin:0;padding:0;list-style:none}
+.card.open .facts{display:grid;gap:10px}
+.facts li{background:var(--sand);border-radius:16px;padding:10px 14px;font-size:17px}
+.facts b{font-family:'Fredoka',sans-serif;color:var(--coral)}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.tip{background:var(--surface);border:3px dashed var(--line);border-radius:24px;padding:20px}
+.tip .n{display:inline-flex;width:44px;height:44px;border-radius:50%;background:var(--sun);color:#0B3D4C;font:700 24px 'Fredoka',sans-serif;align-items:center;justify-content:center;margin-bottom:8px}
+.tip p{margin:0}
+.quiz{background:var(--surface);border:3px solid var(--line);border-radius:28px;padding:24px}
+.q{display:none}.q.show{display:block}
+.q h3{font-size:26px;margin-bottom:14px}
+.opts{display:grid;gap:10px}
+button.opt{font:600 19px 'Fredoka',sans-serif;text-align:left;background:var(--sand);color:var(--ink);border:3px solid var(--line);border-radius:18px;padding:14px 18px;cursor:pointer;min-height:52px}
+button.opt.right{background:#2E9E5B;color:#fff;border-color:#2E9E5B}
+button.opt.wrong{background:var(--coral);color:#fff;border-color:var(--coral)}
+.fb{min-height:32px;margin-top:12px;font-weight:700}
+.score{font:600 30px 'Fredoka',sans-serif}
+footer{padding:28px 0 48px;text-align:center;color:var(--muted);font-size:16px}
+</style>
+</head>
+<body>
+<header class="hero wrap">
+<div class="fish" aria-hidden="true"></div>
+<h1>Friends in Port Phillip Bay</h1>
+<p>Meet the animals that live in Port Phillip Bay, right in your own backyard!</p>
+</header>
+
+<main class="wrap">
+<section id="animals">
+<h2>Meet the animals</h2>
+<p class="sub">Tap a button to find out more about each one.</p>
+<div class="grid">
+
+<article class="card">
+<div class="pic"><img src="weedy_seadragon_transparent.png" width="150" height="102" alt=""/>
+  <svg viewBox="248 98 230 325" role="img" aria-label="Weedy seadragon"><gcx="312" cy="305" rx="15" ry="5" transform="rotate(110 312 305)"/></g><circle cx="402" cy="138" r="5" fill="#fff"/></svg></div>
+<h3>Weedy Seadragon</h3>
+<p class="tag">The bay’s flowy friend.&nbsp; &nbsp; &nbsp; &nbsp;</p>
+<ul class="facts">
+<li><b>Cousin of the seahorse.</b> Its leafy bits sway like seaweed, so it hides in plain sight.</li>
+<li><b>Dad does the babysitting!</b> The male carries the eggs on his tail until they hatch.</li>
+<li><b>Look for me:</b> around jetties and seaweed beds. I’m shy, so look very closely.</li>
+</ul>
+<button class="more" aria-expanded="false">Tap to meet me</button>
+</article>
+
+<article class="card">
+<div class="pic" aria-hidden="true"><img src="penguin-model.png" width="80" height="95" alt=""/></div>
+<h3>Little Penguin</h3>
+<p class="tag">St Kilda and Phillip Islands finest feathery friends.</p>
+<ul class="facts">
+<li><b>Tiny but tough.</b> Little penguins are about as tall as a ruler and can hide in between rocks.</li>
+<li><b>Home time is dusk.</b> They swim and fish all day, then waddle back to the rocks at sunset.</li>
+<li><b>Look for me:</b> At the St Kilda breakwater. Stay quiet as a mouse, don't use your torch my eyes are sensitive!</li>
+</ul>
+<button class="more" aria-expanded="false">Tap to meet me</button>
+</article>
+
+<article class="card">
+<div class="pic" aria-hidden="true"><img src="images-3.jpeg" width="175" height="97" alt=""/>&nbsp;</div>
+<h3>Burrunan Dolphin</h3>
+<p class="tag">Port Phillips very own dolphin .</p>
+<ul class="facts">
+<li><b>A newly named species.</b> Scientists only gave me my name in 2011.</li>
+<li><b>Home all year.</b> A few of us live in the bay instead of travelling far away each year.</li>
+<li><b>Look for me:</b> on boat tours or from the shore on a calm day. Binoculars help!</li>
+</ul>
+<button class="more" aria-expanded="false">Tap to meet me</button>
+</article>
+
+<article class="card">
+<div class="pic" aria-hidden="true"><img src="spider_crab.jpg" width="145" height="95" alt=""/>&nbsp;</div>
+<h3>Giant Spider Crab</h3>
+<p class="tag"> A hard shell but soft inside.</p>
+<ul class="facts">
+<li><b>Shell swap.</b> Us crabs outgrow our shells, so each winter we shed the old one and grow a new one.</li>
+<li><b>Safety in numbers.</b> Me and my friends gather by the thousands and pile up while our new shells are soft.</li>
+<li><b>Look for me:</b> under piers on the bay in winter. Look, but don’t touch!</li>
+</ul>
+<button class="more" aria-expanded="false">Tap to meet me</button>
+</article>
+
+<article class="card">
+	
+<div class="pic" aria-hidden="true"><img src="images-4.jpeg" width="130" height="97" alt="" class="move-horizontal"
+										 /* Moves the image 80 pixels
+										  /* Moves the image 80 pixels to the right */
+    transform: translateX(15px); 
+  }
+<style							 />&nbsp;&nbsp;</div>
+<h3>Australasian gannet</h3>	
+</style>
+<p class="tag">A seabird that dives like a dart.</p>
+<ul class="facts">
+<li><b>Plunge!</b> I fold my wings and dive into the water to catch fish.</li>
+<li><b>A big nesting spot.</b> Gannets nest on Pope’s Eye, near the mouth of the bay.</li>
+<li><b>Look for me:</b> over the water, high up, before I dive down and make a splash!</li>
+</ul>
+<button class="more" aria-expanded="false">Tap to meet me</button>
+</article>
+
+<article class="card">
+<div class="pic" aria-hidden="true"><img src="NicePng_octopus-png_318473.png" width="140" height="92" alt=""/>&nbsp;</div>
+<h3>Blue-ringed Octopus</h3>
+<p class="tag">A small, shy, eight legged friend, who happens to be very venomous.</p>
+<ul class="facts">
+<li><b>Rings that flash.</b> I get bright blue rings when I feel scared. That means im asking you to “keep away!”</li>
+<li><b>Never touch.</b> I might be tiny, but my bite is dangerous. Make sure to tell a grown up if you spot me.</li>
+<li><b>Look for me:</b> in rock pools. I love to squeeze in to small spaces, but no touching!.</li>
+</ul>
+<button class="more" aria-expanded="false">Tap to meet me</button>
+</article>
+
+</div>
+</section>
+
+<section id="hero">
+<h2>Be a Bay Hero</h2>
+<p class="sub">Rubbish on the beach, or in the street, can end up in the bay. But you can help!</p>
+<div class="tips">
+<div class="tip"><span class="n">1</span><p><b>Take it home or bin it.</b> Please pack up every wrapper, bottle and bag before you leave to help your new friends in the sea.</p></div>
+<div class="tip"><span class="n">2</span><p><b>Streets lead to the sea.</b> Drains carry litter to the bay, so bin it wherever you are.</p></div>
+<div class="tip"><span class="n">3</span><p><b>Pick up three.</b> Try to find 3 pieces of rubbish wherever you are and throw them away, make sure you are being safe and washing your hands afterwards.</p></div>
+<div class="tip"><span class="n">4</span><p><b>Give animals space.</b> Watch quietly from far away and never chase them, that way they might come back to say 'Hi' again.</p></div>
+</div>
+</section>
+
+<section id="quiz">
+<h2>Quick quiz</h2>
+<p class="sub">Can you get all three right?</p>
+<div class="quiz" id="quiz" aria-live="polite"></div>
+</section>
+</main>
+
+<footer class="wrap">Made to educate and inform about the animals of Port Phillip Bay.</footer>
+
+<script>
+document.querySelectorAll('button.more').forEach(function(b){
+  b.addEventListener('click',function(){
+    var c=b.closest('.card'),o=c.classList.toggle('open');
+    b.setAttribute('aria-expanded',o);
+    b.textContent=o?'Hide facts':'Tap to meet me';
+  });
+});
+var QS=[
+ {q:'Which animal dad carries the eggs on his tail?',o:['Little penguin','Weedy seadragon','Australasian gannet'],a:1},
+ {q:'When do little penguins come back to the rocks?',o:['At dusk','At lunchtime','At sunrise'],a:0},
+ {q:'You spot a blue-ringed octopus in a rock pool. What do you do?',o:['Pick it up','Poke it with a stick','Look from far away and tell a grown-up'],a:2}
+];
+var box=document.getElementById('quiz'),i=0,score=0;
+function show(){
+  if(i>=QS.length){
+    box.innerHTML='<p class="score">You got '+score+' out of '+QS.length+'!</p><p>'+(score===QS.length?'Amazing, you are a true Bay Hero!':'Read the animal cards again and have another go.')+'</p><button class="more" id="again">Play again</button>';
+    document.getElementById('again').onclick=function(){i=0;score=0;show();};
+    return;
+  }
+  var q=QS[i];
+  box.innerHTML='<div class="q show"><h3>'+(i+1)+'. '+q.q+'</h3><div class="opts"></div><p class="fb"></p></div>';
+  var opts=box.querySelector('.opts'),fb=box.querySelector('.fb');
+  q.o.forEach(function(t,k){
+    var b=document.createElement('button');b.className='opt';b.textContent=t;
+    b.onclick=function(){
+      var all=opts.querySelectorAll('button');all.forEach(function(x){x.disabled=true});
+      if(k===q.a){b.classList.add('right');score++;fb.textContent='Yes! Well done.';}
+      else{b.classList.add('wrong');all[q.a].classList.add('right');fb.textContent='Not quite. The green answer is correct.';}
+      var n=document.createElement('button');n.className='more';n.textContent=i+1<QS.length?'Next question':'See my score';
+      n.onclick=function(){i++;show();};box.querySelector('.q').appendChild(n);n.focus();
+    };
+    opts.appendChild(b);
+  });
+}
+show();
+</script>
+</body>
+</html>
